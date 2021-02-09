@@ -29,3 +29,22 @@ JavaScript can communicate with the server in the background.
 
 It sends XML asynchronously using XMLHttpRequest.
 
+## Ajax Client
+
+### Requests
+
+#### GET vs POST
+
+Two basic kinds of request that we can make on the web.
+
+- `"GET"` requests: used for retrieving data only
+
+- `"POST"` requests: used for sending/changing data
+
+#### Sending Forms
+
+- Need to change header for content type
+
+- `setRequestHeader(header, value)`
+
+

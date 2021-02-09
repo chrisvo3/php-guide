@@ -10,7 +10,7 @@
 
 - __Foundations :__
 
-	- [01 - Basic Level PHP](foundations/01-basic-level-php.md) : Learn what PHP is, how it integrate with HTML, major features of PHP language, and how you can use PHP to create dynamic web pages.
+	- [01 - Basic Level PHP](./foundations/01-basic-level-php.md) : Learn what PHP is, how it integrate with HTML, major features of PHP language, and how you can use PHP to create dynamic web pages.
 
 	- [02 - PHP with MySQL]() : Learn how to build dynamic, data-driven webpages using PHP with MySQL. Strengthen your PHP and MySQL skills by building a robus content management system with secure user authentication.
 
@@ -29,6 +29,8 @@
 	- [09 - PHP New Features]() : Learn about the new features, improvements, and changes in PHP 7: including type declarations, new operators, and anonymous classes.
 
 	- [10 - PHP Design Patterns]() : Write better PHP code by following these popular (and time-tested) design patterns.
+
+- __Advance PHP :__
 
 	- [11 - Learning the Standard PHP Library]() : Learn how to use the iterators and data structures in Standard PHP library to traverse, filter, and sort data.
 

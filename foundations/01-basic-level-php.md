@@ -1,184 +1,277 @@
-# Basic Level of PHP
+# Basic Fundamental of PHP
 
 ## What is PHP?
 
-PHP stands for Hypertext Preprocessor. It is an open source server-side scripting language which is widely used for web development. It supports many databases like MySQL, Oracle, Sybase, Solid, PostgreSQL, generic ODBC etc.
+PHP is server-side scripting language. A script only runs in response to an event. It also usually runs a set of instruction by working down the page from the start to the end. It has low or no user interaction after that initial event.
 
----
+PHP does not run until a web page is requested. Then it launches, follows its instruction from top to bottom, and then quits until another action launches the script again.
 
-## What is PEAR in PHP?
+### Script language vs Programming Language
 
-PEAR is a framework and repository for reusable PHP components. PEAR stands for PHP Extension and Application Repository. It contains all types of PHP code snippets and libraries.
+A programming language runs even when not responding to evenets. It continues to run until wait for interaction, whether that interaction comes from a user making choices, or from other programs or input.
 
-It also provides a command line interface to install "packages" automatically.
+A program also jumps around its instructions a lot more, so there's often not a clear start and end point. It often involves lots of user interaction.
 
----
+### Blurred line
 
-## Who is known as the father of PHP?
+As scripts getting more complex, they start to reseumble programs. And the simplest programs, they are just basically scripts.
 
-Rasmus Lerdorf
+### Server side vs Client side
 
----
+Client-side is opposite to server side. The code run on our web server, which is server-side; or does on user's computer, which is client-side. When working on web page, the user's browser is client-side.
 
-## What was the old name of PHP?
+Constrast to this, JavaScript is an example of a popular scripting language. But JavaScript is a client-side scripting language. JavaScript code is sent to the user's browswer, then it does its work there. 
 
-The old name of PHP was Personal Home Page.
+PHP never sent to the user, it runs entirely on the web server, and the results of that code is what's sent to the user's browser. PHP cannot run on its own because it runs on the web server. That means it need to have a running web serviver in order to use. PHP code does not need to be compiled. It is executed by the web server exactly as it's written.
 
----
+While other code like C or Java require the code to be compiled, or translated into another form before it can be used.
 
-## Explain the difference b/w static and dynamic websites?
+PHP help create dynamic pages. Page content can change based on conditions, such as interactions with the user, or data stored in database. You can think of PHP as turbo charging your HTML.
 
-In static websites, content can't be changed after running the script. You can't change anything on the site. It is predefined.
+## PHP Code
 
-In dynamic websites, content of script can be changed at the run time. Its content is regenerated every time a user visit or reload. Google, yahoo and every search engine is the example of dynamic website.
+`<?php` is opening of the PHP tag, and `?>` is ysed to close the PHP tag.
 
----
+To learn more about what PHP version you are using, you can use `<?php phpinfo(); ?>`. PHP doesn't care about white space.
 
-## What is the name of scripting engine in PHP?
+These are the same tags but omitting the letter `php` from it, but they are also a bad forms to use.
 
-The scripting engine that powers PHP is called Zend Engine 2.
-
----
-
-## Explain the difference between PHP4 and PHP5.
-
-PHP4 doesn't support oops concept and uses Zend Engine 1.
-
-PHP5 supports oops concept and uses Zend Engine 2.
-
----
-
-## What are the popular Content Management Systems (CMS) in PHP?
-
-__WordPress:__ WordPress is a free and open-source content management system (CMS) based on PHP & MySQL. It includes a plug-in architecture and template system. It is mostly connected with blogging but supports another kind of web content, containing more traditional mailing lists and forums, media displays, and online stores.
-
-__Joomla:__ Joomla is a free and open-source content management system (CMS) for distributing web content, created by Open Source Matters, Inc. It is based on a model-view-controller web application framework that can be used independently of the CMS.
-
-__Magento:__ Magento is an open source E-trade programming, made by Varien Inc., which is valuable for online business. It has a flexible measured design and is versatile with many control alternatives that are useful for clients. Magento utilizes E-trade stage which offers organization extreme E-business arrangements and extensive support network.
-
-__Drupal:__ Drupal is a CMS platform developed in PHP and distributed under the GNU (General Public License).
-
----
-
-## What are the popular frameworks in PHP?
-
-- CakePHP
-
-- CodeIgniter
-
-- Yii 2
-
-- Symfony
-
-- Zend Framework etc.
-
----
-
-## Which programming language does PHP resemble to?
-
-PHP has borrowed its syntax from Perl and C.
-
----
-
-## List some of the features of PHP7.
-
-- Scalar type declarations
-
-- Return type declarations
-
-- Null coalescing operator (??)
-
-- Spaceship operator
-
-- Constant arrays using define()
-
-- Anonymous classes
-
-- Closure::call method
-
-- Group use declaration
-
-- Generator return expressions
-
-- Generator delegation
-
-- Space ship operator
-
----
-
-## What is "echo" in PHP?
-
-PHP echo output one or more string. It is a language construct not a function. So the use of parentheses is not required. But if you want to pass more than one parameter to echo, the use of parentheses is required.
-
-Syntax:
 ```php
-void echo ( string $arg1 [, string $... ] )
+<?      ?>
+<?=     ?>
 ```
 
----
-
-## What is "print" in PHP?
-
-PHP print output a string. It is a language construct not a function. So the use of parentheses is not required with the argument list. Unlike echo, it always returns 1.
-
-Syntax:
+ASP-Stlye Tags (very bad form) - Microsoft version of PHP
 ```php
-int print ( string $arg)  
+<%      %>
+<%=     %>
 ```
 
----
+PHP is portable, which means you can use it on Window, Mac, or Linux. When using it in different tags, means you have to enable `php.init`, which it won't allow PHP to be portable anymore.
 
-## What is the difference between "echo" and "print" in PHP?
+## String
 
-Echo can output one or more string but print can only output one string and always returns 1.
+`echo` this will send to user's browswer, and print out whever that come after echo.
 
-Echo is faster than print because it does not return any value.
-
----
-
-## How a variable is declared in PHP?
-A PHP variable is the name of the memory location that holds data. It is temporary storage.
-
-Syntax:
 ```php
-$variableName = value;  
+$name = Java;
+echo 'Hello World!'; // Hello World!
+echo 'Hello World, ' . $name . '!'; // Hello World, Java!
+echo 2 + 3; // 5
+
+// Single quote vs Double quote
+echo "$name here"; // Java here
+echo '$name here'; // $name here
+
+// best way
+echo "{$name} here"; // Java here
 ```
 
----
+String can be concat with `.` such as
 
-## What is the difference between `$message` and `$$message`?
+```php
+$first = "The quick brown fox";
+$second = " jumped over the lazy dog.";
+  
+$third = $first; // "The quick brown fox"
+$third .= $second; // "The quick brown fox jumped over the lazy dog."
+```
 
-`$message` stores variable data while `$$message` is used to store variable of variables.
+PHP also have documents with all these functions of what you can do with strings.
 
-`$message` stores fixed data whereas the data stored in `$$message` may be changed dynamically.
+`strtolower()` : Turn string to lowercase
 
----
+```php
+// $third = "The quick brown fox jumped over the lazy dog."
 
-## What are the ways to define a constant in PHP?
+strtolower($third);
+// the quick brown fox jumped over the lazy dog.
+```
 
-PHP constants are name or identifier that can't be changed during execution of the script. PHP constants are defined in two ways:
+`strtoupper()` : Turn string to uppercase
 
-Using `define()` function
-Using `const()` function
+```php
+// $third = "The quick brown fox jumped over the lazy dog."
 
----
+strtoupper($third);
+// THE QUICK BROWN FOX JUMPED OVER THE LAZY DOG.
+```
 
-## What are magic constants in PHP?
+`ucfirst()` : Turn string to uppcase first letter
 
-PHP magic constants are predefined constants, which change based on their use. They start with a double underscore `__` and end with a double underscore `__`.
+```php
+// $third = "The quick brown fox jumped over the lazy dog."
 
----
+ucfirst($third);
+// The quick brow fox jumped over the lazy dog.
+```
 
-## How many data types are there in PHP?
+`ucwords()` : Turn string to uppcase words
 
-PHP data types are used to hold different types of data or values. There are 8 primitive data types which are further categorized in 3 types:
+```php
+// $third = "The quick brown fox jumped over the lazy dog."
 
-- Scalar types
+ucwords($third);
+// The Quick Brown Fox Jumped Over The Lazy Dog.
+```
 
-- Compound types
+`strlen()` : Get length of the string
 
-- Special types
+```php
+// $third = "The quick brown fox jumped over the lazy dog."
 
----
+strlen($third);
+// 45
+```
 
+`trim()` : Trim the string
 
+```php
+echo "A" . trim(" B C D ") . "E";
+// AB C DE
+```
+
+`strstr()` : Find the string in string
+
+```php
+// $third = "The quick brown fox jumped over the lazy dog."
+
+strstr($third, "brown");
+// brown fox jumped over the lazy dog.
+```
+
+`str_replace()` : Replace string1 by string2 in a string
+
+```php
+// $third = "The quick brown fox jumped over the lazy dog."
+
+str_replace("quick", "super-fast", $third);
+// The super-fast brown fox jumped over the lazy dog.
+```
+
+`str_repeat()` : Repeat
+
+```php
+// $third = "The quick brown fox jumped over the lazy dog."
+
+str_repeat($third, 2);
+// The quick brown fox jumped over the lazy dog.The quick brown fox jumped over the lazy dog. 
+```
+
+`substr()` : Make substring
+
+```php
+// $third = "The quick brown fox jumped over the lazy dog."
+
+substr($third, 5, 10);
+// uick brown
+```
+
+`strpos()` : Find position 
+
+```php
+// $third = "The quick brown fox jumped over the lazy dog."
+
+strpos($third, "brown");
+// 10
+```
+
+`strchr()` : Find character
+
+```php
+// $third = "The quick brown fox jumped over the lazy dog."
+
+strchr($third, "z");
+// zy dog.
+```
+
+## Numbers in PHP 
+
+**Integers :** 
+
+Basic operation that must known by now:
+
+```php
+$a = 6;
+$b = 3;
+
+$c = $a + $b; // $c = 9
+$a += $b // $a = $a + b -> $a = 9
+
+$c = $a - $b; // $c = 3
+$a -= $b // $a = $a + b -> $a = 3
+
+$c = $a * $b; // $c = 18
+$a *= $b // $a = $a * b -> $a = 18
+
+$c = $a / $b; // $c = 2
+$a /= $b // $a = $a / b -> $a = 2
+
+// increment
+$b++;
+
+// decrement
+$b--;
+```
+
+Beside doing basic operation like `+`, `-`, `/`, `*`. PHP also have other functions that can be used such as:
+
+`abs()` : absolute value
+
+```php
+abs(0 - 300);
+// 300
+```
+
+`pow()` : exponential
+
+```php
+pow(2, 8);
+// 256
+```
+
+`sqrt()` : square root
+
+```php
+sqrt(100);
+// 10
+```
+
+`fmod` : modulo
+
+```php
+fmod(20, 7);
+// 6
+```
+
+`rand()` : random or random(min, max)
+
+```php
+rand();
+// 123421
+
+rand(1, 10);
+// 6
+```
+
+**Floats :** 
+
+`round()` : 
+
+```php
+
+```
+
+`ceil()` : 
+
+```php
+
+```
+
+`floor()` : 
+
+```php
+
+```
+
+``
