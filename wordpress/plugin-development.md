@@ -311,5 +311,22 @@ You can test your code with `console.log( wpplugin.hook );`
 
 ## Saving Data to Options Table
 
+This is the diagram of the WordPress Database
+![WordPress Database](https://codex.wordpress.org/images/2/25/WP4.4.2-ERD.png)
 
+`wp_postmeta` is extra information about the `wp_posts` 
+
+`wp_options` is not connected to anything, and is often where plugin will store simple information. Some larger plugins like e-commerce will actually create entire database tables to help organize their information.
+
+But most simple plugins we can get away with storing information inside `wp_options`.
+
+If you're using LocalbyFlyWheel, you can take a look under `Database`.
+
+`wp_options` gives the ability to save data in the options table of wordpress using special WordPress function.
+
+## The Setting API
+
+The setting API is going to allow us to easily build forms in the admin area that we cab use to edit our options table so that we're not hard coding them.
+
+Usually a page in WordPress will have small different sections inside of it.
 
